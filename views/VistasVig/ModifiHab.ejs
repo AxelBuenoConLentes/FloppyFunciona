@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<title>Registrar Usuarios</title>
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+	<header class="row"><div>
+	<nav class="blue darken-2">
+		<div class="nav-wrapper">
+			<a href="#" class="brand-logo">Floppy</a>
+			<a href="#" class="sidenav-trigger" data-target="mobile-nav">
+			<i class="material-icons">menu</i></a>
+		  <ul id="nav-mobile" class="right hide-on-med-and-down">
+		    <li><a href="./Usuarios">Modificar Usuario</a></li>
+		    <li><a href="./Fraccionamiento">Estados</a></li>
+		    <li><a href="./EnviarClave">Enviar Clave</a></li>
+		  	<li><a class="#"><i class="material-icons">account_circle</i></a></li>
+		  	<li><a href="./Salir">Salir</a></li>
+		  </ul>
+		</div>
+	</nav>
+	<ul class="sidenav" id="mobile-nav">
+		<li><div class="user-view">
+	      <div class="background">
+	        <img src="/images/estacionamiento.jpg">
+	      </div>
+	      <a class="#"><i class="material-icons">account_circle</i></a>
+	      <a><span class="white-text email"><%= user %></span></a>
+    	</div></li>
+	    <li><a href="./Usuarios">Modificar Usuario</a></li>
+	    <li><a href="./Fraccionamiento">Estados</a></li>
+	    <li><a href="./EnviarClave">Enviar clave</a></li>
+		<li><a href="./Salir">Salir</a></li>
+	</ul>
+	</header>
+	<main>
+		<p class="flow-text" align="center">Modificar Usuario</p>
+		
+		<% if(Fraccionamiento == 'No hay habitantes en este fraccionamiento'){ %>
+		<div class="container">
+			<table class="responsive-table col s8">
+				<thead>
+					<tr>
+						<td>Habitante</td>
+						<td>Modificar</td>
+					</tr>
+				</thead>
+				<tbody>
+					<%Fraccionamiento.forEach(function(fraccionamiento){ %>
+					<tr>
+						<td ><%= fraccionamiento.nom_usu%></td>
+						<div id="modal <%= fraccionamiento.nom_usu%>" class="modal modal-fixed-footer">
+						<div class="modal-content row ">
+							<p class="flow-text" align="center">Modificar información del habitante</p class="flow-text">
+							  <p>Habitante a modificar:</p><input type="text" readonly="readonly" value="<%= fraccionamiento.cor_usu%>">
+							  <ul class="collapsible">
+								<li>
+									<div class="collapsible-header"><i class="material-icons">create</i>Nombre</div>
+									<div class="collapsible-body" >
+										<form class="col s10" id="1">
+											<div class="input-field col s5">
+												<label class="activate" for="nombre">Nombre del habitante</label>
+												<input type="text" name="nombre" id="nombre">
+											</div><br>
+											<input class = "btn waves-effect waves-green" type="button" value="Cambiar" onclick="ModificarNomHab(event)">
+										</form><br>
+									</div>
+								</li>
+								<li>
+									<div class="collapsible-header"><i class="material-icons">create</i>Matricula del auto</div>
+									
+									<div class="collapsible-body">
+									<form class="col s10" id="2">
+										<div class="input-field col s5">
+											<label class="activate" for="matricula">Matricula del auto</label>
+											<input type="text" name="matricula" id="matricula">
+										</div><br>
+										<input class = "btn waves-effect waves-green" type="button" value="Cambiar" onclick="ModificarMatHab(event)">		
+									</form><br>
+									</div>
+								</li>
+								<li>
+									<div class="collapsible-header"><i class="material-icons">create</i>Marca del auto</div>
+									<div class="collapsible-body">
+									<form class="col s10" id="3">
+										<div class="input-field col s5">
+											<label class="activate" for="marca">Marca del auto</label>
+											<input type="text" name="marca" id="marca">
+										</div><br>
+										<input class = "btn waves-effect waves-green" type="button" value="Cambiar" onclick="ModificarMarHab(event)">		
+									</form><br>
+									</div>
+								</li>
+							</ul>
+							</div>
+								<div class="modal-footer ">
+								<a href="#!" class="modal-close waves-effect waves-green btn-flat">De acuerdo</a>
+							</div>
+						</div>
+						<td class ="waves-effect waves-green modal-trigger hoverable" href="#modal <%= fraccionamiento.nom_usu%>">Modificar Usuario</td>
+					</tr>
+					<% });%>
+				</tbody>	
+			</table>
+		</div>
+		<% } else { %>
+			<div><p>No hay ningún habitante registrado</p></div>
+		<% }%>
+	</main>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/core.js"></script>
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="/javascripts/AJAXVig.js"></script>
+	<script src="/javascripts/materialize.js"></script>
+	<script src="/javascripts/otro.js"></script>
+	<script src="/javascripts/init.js"></script>
+</body>
+</html>

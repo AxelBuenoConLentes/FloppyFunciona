@@ -1,0 +1,12 @@
+.input-field label{
+	color: #2196f3;
+}
+.input-field .prefix.active {
+     color: #2196f3;
+}
+.boton_iniciar{
+	background-color: #2196f3;
+}
+.waves-effect.waves-teal .waves-ripple{
+	background-color: #2196f3;
+}

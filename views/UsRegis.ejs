@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Usuarios Registrados</title>
+	<meta charset="utf-8">
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+	<header class="row"><div>
+		<nav class="yellow darken-2">
+		<div class="nav-wrapper">
+		  <a href="#" class="brand-logo">Floppy</a>
+		  <ul id="nav-mobile" class="right hide-on-med-and-down">
+		    <li><a href="./Registros">Usuarios Registrados</a></li>
+		    <li><a href="./AdminVig">Administrar Vigilantes</a></li>
+		    <li><a href="./Fraccionamientos">Fraccionamientos</a></li>
+		  	<li><a class="#"><i class="material-icons">account_circle</i></a></li>
+		  	<li><a href="./Salir">Salir</a></li>
+		  	<li><%= user %></li>
+		  </ul>
+		</div>
+		</nav>
+	</header>
+	<main class="row">
+	<div class=" col s12">
+		<p class="flow-text">Usuarios de automoviles registrados</p>
+		<blockquote >Consulta de usuarios</blockquote>
+        <table class="striped">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Placas</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Francisco</td>
+              <td>12345678</td>
+            </tr>
+            <tr>
+              <td>María</td>
+              <td>23456789</td>
+            </tr>
+            <tr>
+              <td>Miguel</td>
+              <td>34567890</td>
+            </tr>
+          </tbody>
+        </table>
+	</div>
+	</main>
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="../javascripts/materialize.js"></script>
+  <script src="../javascripts/otro.js"></script>
+  <script src="../javascripts/init.js"></script>
+</body>
+</html>

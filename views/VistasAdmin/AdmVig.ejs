@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Administrar vigilantes</title>
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
+	<link type="text/css" rel="stylesheet" href="/css/adminvig.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+	<header class="row"><div>
+	
+	<nav class="blue darken-2">
+		<div class="nav-wrapper">
+			<a href="#" class="brand-logo">Floppy</a>
+			<a href="#" class="sidenav-trigger" data-target="mobile-nav">
+			<i class="material-icons">menu</i></a>
+		  <ul id="nav-mobile" class="right hide-on-med-and-down">
+		    <li><a href="./Registros">Vigilantes Registrados</a></li>
+		    <li><a href="./AdminVig">Administrar Vigilantes</a></li>
+		    <li><a href="./Fraccionamientos">Fraccionamientos</a></li>
+		  	<li><a class="#"><i class="material-icons">account_circle</i></a></li>
+		  	<li><a href="./Salir">Salir</a></li>
+		  </ul>
+		</div>
+	</nav>
+		
+	<ul class="sidenav" id="mobile-nav">
+		<li><div class="user-view">
+	      <div class="background">
+	        <img src="/images/estacionamiento.jpg">
+	      </div>
+	      <a class="#"><i class="material-icons">account_circle</i></a>
+	      <a><span class="white-text email"><%= user %></span></a>
+    	</div></li>
+	    <li><a href="./Registros">Usuarios Registrados</a></li>
+	    <li><a href="./AdminVig">Administrar vigilantes</a></li>
+	    <li><a href="./Fraccionamientos">Fraccionamientos</a></li>
+		<li><a href="./Salir">Salir</a></li>
+	</ul>
+	</header>
+	<!--Holi papu-->
+	<main class="row">
+	<div class=" col s12">
+		<p class="flow-text" align="center">Aqui se va administrar a los vigilantes de un unidad</p>
+			<form class="card-panel col s12">
+				<!--Inicio del primer div-->
+			<div class="col s6">
+				<p>Datos del vigilante</p>
+				<div class="input-field col s10">
+					<i class="material-icons prefix">account_circle</i>
+					<input name="nom" type="text" id="nombre">
+					<label class="activate" for="nombre">Ingresa tu nombre completo</label>
+				</div>
+				<div class="input-field col s10">
+					<i class="material-icons prefix">lock</i>
+					<input name="pas" type="password" id="contraseña">
+					<label class="activate" for="contraseña">Ingresar tu contraseña</label>
+				</div>
+				<div class="input-field col s10">
+					<i class="material-icons prefix">contact_mail</i>
+					<input name="cor" type="email" id="contacto" placeholder="ejemplo@ejemplo.com">
+					<label class="activate" for="contacto">Ingresar correo electronico</label>
+				</div>
+				<div class="input-field col s10">
+					<i class="material-icons prefix">contact_phone</i>
+					<input name="tel" type="text" id="contactotelefono">
+					<label class="activate" for="contactotelefono">Ingresar contacto telefonico</label>
+				</div>
+			</div><!--Fin del primer div-->
+
+			<div class="col s6">
+				<p>Datos del fraccionamiento</p>
+				<div class="input-field col s10">
+					<i class="material-icons prefix">place</i>
+					<input name="dir" type="text" id="direccion">
+					<label class="activate" for="direccion">Dirección del fraccionamiento</label>
+				</div>
+				<div class="input-field col s10">
+					<i class="material-icons prefix"></i>
+					<input name="cap" type="number" id="capacidad">
+					<label class="activate" for="capacidad">Capacidad del fraccionamiento</label>
+				</div>
+				<div class="input-field col s10">
+					<input type="button" value="Registrar" class="btn waves-effect waves-light" name="Registrar" onclick="InsertarFrac(event)">
+				</div>
+			</div>
+			</form>
+		<p class="flow-text" align="center">Modificar datos del vigilante</p>
+		<form class="card-panel col s12">
+				<% if(Fraccionamiento == 'No hay ningun fraccionamiento registrado') {%>
+					<div class="col s8">
+						<p><%= Fraccionamiento %></p>
+					</div>
+				<% } else{%>
+				<div class="input-field col s8">
+					<select id="fraccionamiento">
+						<% Fraccionamiento.forEach(function(Fraccionamiento){ %>
+							<option value="<%= Fraccionamiento.dir_fra %>"><%= Fraccionamiento.dir_fra %></option>
+						<% }); %>    				
+    				</select>
+    				<label>Fraccionamiento</label>
+				</div>
+				<% } %>
+				<div class="input-field col s8">
+					<i class="material-icons prefix">account_circle</i>
+					<input type="text" id="Mnombre">
+					<label class="activate" for="modinombre">Ingresa el nuevo nombre completo</label>
+				</div>
+				<div class="input-field col s8">
+					<i class="material-icons prefix">contact_mail</i>
+					<input type="email" id="Mcorreo">
+					<label class="activate" for="Mcorreo">Ingresar el nuevo correo electronico</label>
+				</div>
+				<div class="input-field col s8">
+					<i class="material-icons prefix">contact_phone</i>
+					<input type="text" id="Mtelefono">
+					<label class="activate" for="Mtelefono">Ingresar el nuevo contacto telefonico</label>
+				</div>
+				<div class="input-field col s8">
+					<i class="material-icons prefix"></i>
+					<input type="text" id="Mcontra">
+					<label class="activate" for="Mcontra">Ingresar el nuevo contacto telefonico</label>
+				</div>
+				<div class="input-field col s8">
+					<input type="button" value="Modificar" class="btn waves-effect waves-light" name="Registrar" onclick="ModificarDatosVig(event)">
+				</div>
+			</div>
+		</form>
+	</div>
+	</main>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/core.js"></script>
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="/javascripts/AJAX.js"></script>
+	<script src="/javascripts/materialize.js"></script>
+	<script src="/javascripts/otro.js"></script>
+	<script src="/javascripts/init.js"></script>
+</body>
+</html>

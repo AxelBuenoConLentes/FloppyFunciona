@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vigilantes o Dueños</title>
+	<meta charset="utf-8">
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
+
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+</head>
+<body class="grey lighten-2" >
+	<div class="valign-wrapper">
+	<div class="row" >
+	    <!--img src="./images/FondoVig.jpg" class="cardbg" /-->
+		<div class="card hoverable small z-depth-3">
+			<form class="card-panel grey lighten-4 col s12" ><!--method="POST" action="/vig/Ingresar"-->
+				<div class="card-panel blue darken-1">
+					<h5 align="center">Inicia sesión como vigilante</h5>
+				</div>
+				<div class="input-field col s8">
+					<i class="material-icons prefix">account_circle</i>
+					<input type="email" id="email" name="corvig">
+					<label class="activate" for="nombre">Ingresa tu correo completo</label>
+				</div>
+				<div class="input-field col s8">
+					<i class="material-icons prefix">lock</i>
+					<input type="password" id="contraseña" name="convig">
+					<label class="activate" for="contraseña">Ingresar tu contraseña</label>
+				</div>
+				<div class="input-field col s8">
+					<a class="boton_iniciar btn waves-effect waves-teal btn-flat" onclick="LoginVig(event)">Iniciar Sesión</a>
+					<!--<input type="button" value="Iniciar sesion" class="btn waves-effect yellow darken-1" onclick="LoginVig(event)">-->
+				</div>
+			</form>
+		</div>
+		<div id="error"></div>
+	</div>
+	</div>
+	<script src="/javascripts/materialize.js"></script>
+	<script src="/javascripts/otro.js"></script>
+	<script src="/javascripts/init.js"></script>
+  	<script src="/javascripts/AJAXVig.js"></script>
+</body>
+</html>

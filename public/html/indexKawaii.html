@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Floppy</title>
+	<meta charset="utf-8">
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
+
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+	<header class="row"><div>
+		<nav class="yellow darken-2">
+		<div class="nav-wrapper">
+		  <a href="#" class="brand-logo">Floppy</a>
+		  <ul id="nav-mobile" class="right hide-on-med-and-down">
+		    <li><a href="#">¿Quienes Somos?</a></li>
+		    <li><a href="#">¿Que es Floppy?</a></li>
+		    <li><a href="#">Filosofia</a></li>
+		  </ul>
+		</div>
+		</nav>
+	</header>	
+	<main class="row"> 
+	<div class=" col s12">
+		<div class="col s6">
+			<!--<div class="carousel carousel-slider">
+				<a class="carousel-item"><img src="Imagen1_slider.png"></a>
+				<a class="carousel-item"><img src="images/Imagen2_slider.png"></a>
+			</div>-->
+		<div class="slider"><!--Inicio del carousel-->
+		    <ul class="slides">
+		    <li>
+	        <img src="images/Imagen1_slider.png">
+	        <div class="caption center-align">
+	          <h3>Conoce Floppy</h3>
+	          <h5 class="light grey-text text-lighten-3">Floppy es un servicio para la automatización de puertas en estacionamiento.</h5>
+	        </div>
+	      	</li>
+	      	<li>
+	        <img src="images/Imagen2_slider.png"> <!-- random image -->
+	        <div class="caption left-align">
+	          <h3>Entra a tu fraccionamiento</h3>
+	          <h5 class="light grey-text text-lighten-3">Ingresa a tu fraccionamiento por medio de tus placas.</h5>
+	        </div>
+	      	</li>
+	      	<li>
+	        <img> <!-- random image -->
+	        <div class="caption right-align">
+	          <h3>¿Y mi auto?</h3>
+	          <h5 class="light grey-text text-lighten-3">Revisa si tu auto esta dentro del fraccionamiento.</h5>
+	        </div>
+	      </li>
+	      <li>
+	        <img> <!-- random image -->
+	        <div class="caption center-align">
+	          <h3>Mas comodo</h3>
+	          <h5 class="light grey-text text-lighten-3">No tendras contratiempos al entrar a tu fraccionamiento.</h5>
+	        </div>
+	      </li>
+	    	</ul>
+	  	</div><!--Fin del carousel-->
+	</div>
+	<div class="col s6">
+		<div class="row">
+			<blockquote class="col s12 hr fade-left-in-out">¿Quieres registrar tu auto en tu fraccionamiento? <a href="RegistroUsuario"> Sigue estos pasos para registrarte </a> </blockquote><br>
+			<blockquote class="col s12">¿Ya eres usuario de nuestro servicio?.</blockquote>
+			<form class="col s12">
+				<div class="row">
+					<div class="input-field col s8">
+						<i class="material-icons prefix">account_circle</i>
+						<input type="text" id="correo">
+						<label class="activate" for="correo">Ingresa tu correo electronico</label>
+					</div>
+					<div class="input-field col s8">
+						<i class="material-icons prefix">lock</i>
+						<input type="password" id="contraseña">
+						<label class="activate" for="contraseña">Ingresa tu contraseña</label>
+					</div>
+					<div class="input-field col s8">
+						<a class="btn waves-effect waves-light waves-teal btn-flat" style="background-color: #2196f3;" onclick="Login(event)">Ingresar
+						</a>
+						<!--<input type="button"  value="Ingresar"  class="btn waves-effect waves-light" name="Entrar" onclick="Login(event)">-->
+					</div>
+				</div>
+				<div class="col s12 scale-out" id="Mensaje"></div>
+			</form>
+		</div>
+	</div>
+	</div>
+	</main>
+	<footer></footer>
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="./javascripts/materialize.js"></script>
+	<script src="./javascripts/AJAXUser.js"></script>
+	<script src="./javascripts/otro.js"></script>
+	<script src="./javascripts/init.js"></script>
+</body>
+</html>

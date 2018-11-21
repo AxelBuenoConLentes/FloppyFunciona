@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ondrop="false" ondrag="return false" onpaste="return false" oncontextmenu="return false">
+<head>
+	<title>Registrar Usuarios</title>
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+	<header class="row"><div>
+	<nav class="blue darken-2">
+		<div class="nav-wrapper">
+			<a href="#" class="brand-logo">Floppy</a>
+			<a href="#" class="sidenav-trigger" data-target="mobile-nav">
+			<i class="material-icons">menu</i></a>
+		  <ul id="nav-mobile" class="right hide-on-med-and-down">
+		    <li><a href="./Usuarios">Modificar Usuario</a></li>
+		    <li><a href="./Fraccionamiento">Estados</a></li>
+		    <li><a href="./EnviarClave">Enviar Clave</a></li>
+		  	<li><a class="#"><i class="material-icons">account_circle</i></a></li>
+		  	<li><a href="./Salir">Salir</a></li>
+		  </ul>
+		</div>
+	</nav>
+		
+	<ul class="sidenav" id="mobile-nav">
+		<li><div class="user-view">
+	      <div class="background">
+	        <img src="/images/estacionamiento.jpg">
+	      </div>
+	      <a class="#"><i class="material-icons">account_circle</i></a>
+	      <a><span class="white-text email"><%= user %></span></a>
+    	</div></li>
+	    <li><a href="./Usuarios">Modificar Usuario</a></li>
+	    <li><a href="./Fraccionamiento">Estados</a></li>
+	    <li><a href="./EnviarClave">Enviar clave</a></li>
+		<li><a href="./Salir">Salir</a></li>
+	</ul>
+	</header>
+	<main class="row">
+	<div class=" col s12">
+		<h5 align="center">Aqui se va administrar a los vigilantes de un unidad</h5 align="center">
+		<form class="card-panel grey lighten-4 z-depth-1 col s12" action="Enviar" method="POST">
+			<h5 class="card-panel blue darken-2" align="center">Ingresa el correo electronico del habitante que quieras registrar</h5>
+			<div class="input-field col s8">
+				<i class="material-icons prefix">account_circle</i>
+				<input name="cor" type="email" id="correo">
+				<label class="activate" for="correo">Correo del habitante</label>
+			</div>
+			<div class="input-field col s8">
+				<a class="btn waves-effect waves-light waves-teal btn-flat" style="background-color: #2196f3;" onclick="EnviarEmail(event)" name="Registrar">Enviar
+				</a>
+				<!--<input type="button" value="Enviar" class="btn waves-effect waves-light waves-teal" name="Registrar" onclick="EnviarEmail(event)" style="background-color: #2196f3">
+				<input type="button" value="Enviar" class="btn waves-effect yellow darken-2" onclick="EnviarEmail(event)" name="Registrar">-->
+			</div>
+		</form>	
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/core.js"></script>
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="/javascripts/AJAXVig.js"></script>
+	<script src="/javascripts/materialize.js"></script>
+	<script src="/javascripts/otro.js"></script>
+	<script src="/javascripts/init.js"></script>
+</body>
+</html>
